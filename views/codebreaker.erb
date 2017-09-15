@@ -1,0 +1,18 @@
+<form action='/' method='post'>
+    <input list='colors' name='pos1' size='5' />
+    <input list='colors' name='pos2' size='5' />
+    <input list='colors' name='pos3' size='5' />
+    <input list='colors' name='pos4' size='5' />
+    <datalist id='colors'>
+        <option value='BK' />
+        <option value='BU' />
+        <option value='GN' />
+        <option value='RD' />
+        <option value='WH' />
+        <option value='YW' />
+    </datalist>
+    <input type="Submit" value="Check" />
+</form>
+<p>BK: Black BU: Blue GN: Green RD: Red WH: White YW: Yellow</p>
+<p>Code keys: (EM: No Match WH: One Color in Right Position BK: Right Color Wrong Position)</p>
+<p><%= game_keys %></p>
