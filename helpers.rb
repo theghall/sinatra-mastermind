@@ -97,8 +97,10 @@ def increment_guesses
     session[:guesses] += 1
 end
 
-def add_game_keys(code_key)
+def add_game_keys(guess, code_key)
     session[:game_keys] << '<br>' unless session[:game_keys].empty?
+    session[:game_keys] << guess.join(' ')
+    session[:game_keys] << ' : '
     session[:game_keys] << code_key.join(' ')
 end
 
@@ -109,7 +111,7 @@ def check_guess(params)
     
     gen_code_key(guess)  
     
-    add_game_keys(get_code_key)
+    add_game_keys(guess, get_code_key)
 end
 
 def correct_guess?
